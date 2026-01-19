@@ -1,11 +1,11 @@
 export default function LivePage() {
   return (
-    <main style={{ padding: "80px 60px", maxWidth: 960 }}>
+    <main style={{ padding: "80px 60px", maxWidth: 900 }}>
       <h1
         style={{
-          fontSize: 12,
-          letterSpacing: "0.25em",
-          marginBottom: 48
+          fontSize: 32,
+          letterSpacing: "0.22em",
+          marginBottom: 48,
         }}
       >
         LIVE
@@ -15,16 +15,17 @@ export default function LivePage() {
       <section style={{ marginBottom: 64 }}>
         <h2
           style={{
-            fontSize: 12,
+            fontSize: 14,
             letterSpacing: "0.18em",
-            marginBottom: 16
+            textTransform: "uppercase",
+            marginBottom: 24,
           }}
         >
-          UPCOMING SHOWS
+          Upcoming Shows
         </h2>
 
-        <p style={{ opacity: 0.5, fontSize: 13 }}>
-          No upcoming shows announced.
+        <p style={{ color: "#777" }}>
+          No upcoming dates announced.
         </p>
       </section>
 
@@ -32,39 +33,32 @@ export default function LivePage() {
       <section>
         <h2
           style={{
-            fontSize: 12,
+            fontSize: 14,
             letterSpacing: "0.18em",
-            marginBottom: 24
+            textTransform: "uppercase",
+            marginBottom: 24,
           }}
         >
-          PAST SHOWS
+          Past Shows
         </h2>
 
-        <div style={{ display: "grid", gap: 24, fontSize: 14 }}>
-          <div>
-            <strong>DEC 28, 2024 · Seoul, South Korea</strong>
-            <br />
-            Itaewon Club SAVAGE
+        <ul style={{ listStyle: "none", padding: 0, lineHeight: 2 }}>
+          <li>
+            Dec 28, 2024 · Seoul, KR — Club Savage  
             <br />
             Team Rave Year End Party
-          </div>
-
-          <div>
-            <strong>AUG 15, 2025 · Seoul, South Korea</strong>
+          </li>
+          <li>
+            Aug 15, 2025 · Seoul, KR — Cakeshop  
             <br />
-            Itaewon Cakeshop
+            Ekko & Sidetrack / Darklight DNB All Night
+          </li>
+          <li>
+            Nov 7, 2025 · Gwanggyo, KR  
             <br />
-            Ekko & Sidetrack, Darklight DNB All Night Party
-          </div>
-
-          <div>
-            <strong>NOV 07, 2025 · Gwanggyo, South Korea</strong>
-            <br />
-            Hillstate Media Art Exhibition
-            <br />
-            DJ Performance
-          </div>
-        </div>
+            Media Art Exhibition DJ
+          </li>
+        </ul>
       </section>
     </main>
   )
