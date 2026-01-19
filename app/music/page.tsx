@@ -1,43 +1,26 @@
 export default function MusicPage() {
-  const releases = Array(6).fill("Coming Soon")
-
   return (
-    <main style={{ padding: 48 }}>
-      <section
+    <main style={{ padding: "80px 60px" }}>
+      <h1
         style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
-          gap: 32,
+          fontSize: 32,
+          letterSpacing: "0.22em",
+          marginBottom: 24,
         }}
       >
-        {releases.map((title, i) => (
-          <article
-            key={i}
-            style={{ cursor: "pointer" }}
-          >
-            <div
-              style={{
-                width: "100%",
-                aspectRatio: "1 / 1",
-                background: "#e5e5e5",
-                marginBottom: 12,
-                transition: "opacity 0.3s ease",
-              }}
-              onMouseOver={e => (e.currentTarget.style.opacity = "0.75")}
-              onMouseOut={e => (e.currentTarget.style.opacity = "1")}
-            />
-            <div
-              style={{
-                fontSize: 12,
-                letterSpacing: "0.14em",
-                textTransform: "uppercase",
-              }}
-            >
-              {title}
-            </div>
-          </article>
-        ))}
-      </section>
+        MUSIC
+      </h1>
+
+      <p
+        style={{
+          fontSize: 14,
+          letterSpacing: "0.14em",
+          textTransform: "uppercase",
+          color: "#666",
+        }}
+      >
+        Releases in preparation
+      </p>
     </main>
   )
 }
