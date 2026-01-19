@@ -18,19 +18,25 @@ export default function MusicPage() {
         }}
       >
         {releases.map((item, i) => (
-          <article key={i}>
+          <article
+            key={i}
+            style={{ cursor: "pointer" }}
+          >
             <div
               style={{
                 width: "100%",
                 aspectRatio: "1 / 1",
                 background: "#e5e5e5",
                 marginBottom: 12,
+                transition: "opacity 0.3s ease",
               }}
+              onMouseOver={e => (e.currentTarget.style.opacity = "0.75")}
+              onMouseOut={e => (e.currentTarget.style.opacity = "1")}
             />
             <div
               style={{
                 fontSize: 12,
-                letterSpacing: "0.12em",
+                letterSpacing: "0.14em",
                 textTransform: "uppercase",
               }}
             >
