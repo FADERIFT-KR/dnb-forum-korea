@@ -1,8 +1,11 @@
 export default function MusicPage() {
-  const tracks = [
-    "Silence (Remix)",
-    "Guardian Angel",
-    "Hardest Style",
+  const releases = [
+    { title: "Silence (Remix)" },
+    { title: "Guardian Angel" },
+    { title: "Hardest Style" },
+    { title: "Angel w/ Sub Focus" },
+    { title: "Satellite" },
+    { title: "Lost This Feeling (Remix)" },
   ]
 
   return (
@@ -10,29 +13,30 @@ export default function MusicPage() {
       <section
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
           gap: 32,
         }}
       >
-        {tracks.map((title, i) => (
-          <div key={i}>
+        {releases.map((item, i) => (
+          <article key={i}>
             <div
               style={{
-                background: "#e5e5e5",
+                width: "100%",
                 aspectRatio: "1 / 1",
+                background: "#e5e5e5",
                 marginBottom: 12,
               }}
             />
             <div
               style={{
-                fontSize: 13,
-                letterSpacing: "0.08em",
+                fontSize: 12,
+                letterSpacing: "0.12em",
                 textTransform: "uppercase",
               }}
             >
-              {title}
+              {item.title}
             </div>
-          </div>
+          </article>
         ))}
       </section>
     </main>
