@@ -1,41 +1,49 @@
-import SectionDivider from "@/app/components/SectionDivider"
+export default function GalleryPage() {
+  const images = [1, 2, 3, 4, 5, 6]
 
-const items = [1, 2, 3, 4, 5, 6]
-
-export default function Gallery() {
   return (
-    <main style={{ padding: "80px 60px" }}>
-      <h1 style={{ textAlign: "center", letterSpacing: "0.3em" }}>
-        GALLERY
-      </h1>
+    <main style={{ padding: "80px 60px", textAlign: "center" }}>
+      <h1 style={{ fontSize: 28, letterSpacing: "0.3em" }}>GALLERY</h1>
 
-      <SectionDivider />
+      <div
+        style={{
+          width: "100%",
+          maxWidth: 1400,
+          height: 1,
+          background: "#d1d5db",
+          margin: "24px auto 48px",
+        }}
+      />
 
       <section
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
-          gap: 32
+          gap: 32,
+          maxWidth: 1400,
+          margin: "0 auto",
         }}
       >
-        {items.map((id) => (
+        {images.map((i) => (
           <div
-            key={id}
+            key={i}
             style={{
-              width: "100%",
               aspectRatio: "1 / 1",
-              backgroundColor: "#e0e0e0", // ← 구분선과 동일 계열
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "#999",
-              fontSize: 12,
-              letterSpacing: "0.14em",
-              textTransform: "uppercase"
+              background: "#d1d5db",
             }}
           >
-            {/* 이미지 없는 경우 텍스트도 안 쓰고 싶으면 이 줄 삭제 */}
-            {/* NO IMAGE */}
+            <img
+              src={`/gallery/${i}`}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                display: "block",
+              }}
+              onError={(e) => {
+                e.currentTarget.style.display = "none"
+              }}
+            />
           </div>
         ))}
       </section>
