@@ -1,28 +1,18 @@
-import Header from "./components/Header"
+<header style={{
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  padding: "24px 40px"
+}}>
+  <img
+    src="/logo.png"
+    alt="FADERIFT"
+    style={{ height: "28px" }}
+  />
 
-export const metadata = {
-  title: "DNB FORUM KOREA",
-  description: "Drum & Bass producer & curator based in Korea",
-}
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <html lang="en">
-      <body
-        style={{
-          margin: 0,
-          fontFamily: "Inter, system-ui, -apple-system",
-          background: "#fff",
-          color: "#000",
-        }}
-      >
-        <Header />
-        {children}
-      </body>
-    </html>
-  )
-}
+  <nav style={{ display: "flex", gap: "24px" }}>
+    <a href="/">MUSIC</a>
+    <a href="/live">LIVE</a>
+    <a href="/gallery">GALLERY</a>
+  </nav>
+</header>
