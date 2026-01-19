@@ -1,43 +1,43 @@
+import Link from "next/link"
+
 export default function Header() {
   return (
     <header
       style={{
         display: "flex",
-        alignItems: "center",
         justifyContent: "space-between",
-        padding: "32px 60px",
+        alignItems: "center",
+        padding: "32px 60px"
       }}
     >
-      {/* LOGO */}
-      <img
-        src="/logo.png"
-        alt="FADERIFT"
-        style={{
-          height: 28,
-          objectFit: "contain",
-          display: "block",
-        }}
-      />
+      <Link href="/">
+        <img
+          src="/logo.png"
+          alt="FADERIFT"
+          style={{
+            height: 120,   // 기존 대비 약 8배
+            objectFit: "contain",
+            cursor: "pointer"
+          }}
+        />
+      </Link>
 
-      {/* NAV */}
-      <nav
-        style={{
-          display: "flex",
-          gap: 32,
-          fontSize: 12,
-          letterSpacing: "0.18em",
-          textTransform: "uppercase",
-        }}
-      >
-        <a href="/music" style={{ textDecoration: "none", color: "#000" }}>
-          Music
-        </a>
-        <a href="/live" style={{ textDecoration: "none", color: "#000" }}>
-          Live
-        </a>
-        <a href="/gallery" style={{ textDecoration: "none", color: "#000" }}>
-          Gallery
-        </a>
+      <nav style={{ display: "flex", gap: 32 }}>
+        {["music", "live", "gallery"].map(menu => (
+          <Link
+            key={menu}
+            href={`/${menu}`}
+            style={{
+              textDecoration: "none",
+              color: "#000",
+              fontSize: 14,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase"
+            }}
+          >
+            {menu}
+          </Link>
+        ))}
       </nav>
     </header>
   )
