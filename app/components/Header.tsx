@@ -1,44 +1,43 @@
-import Image from "next/image"
-import Link from "next/link"
-
 export default function Header() {
   return (
     <header
       style={{
         display: "flex",
-        justifyContent: "space-between",
         alignItems: "center",
-        padding: "32px 48px",
-        borderBottom: "1px solid #e5e5e5",
-        background: "#fff",
+        justifyContent: "space-between",
+        padding: "32px 60px",
       }}
     >
-      <Link href="/">
-        <Image
-          src="/faderift-logo.png"
-          alt="FADERIFT"
-          width={180}
-          height={40}
-          priority
-        />
-      </Link>
+      {/* LOGO */}
+      <img
+        src="/logo.png"
+        alt="FADERIFT"
+        style={{
+          height: 28,
+          objectFit: "contain",
+          display: "block",
+        }}
+      />
 
-      <nav style={{ display: "flex", gap: 32 }}>
-        {["music", "live", "gallery"].map((item) => (
-          <Link
-            key={item}
-            href={`/${item}`}
-            style={{
-              textDecoration: "none",
-              color: "#000",
-              fontSize: 14,
-              letterSpacing: "0.14em",
-              textTransform: "uppercase",
-            }}
-          >
-            {item}
-          </Link>
-        ))}
+      {/* NAV */}
+      <nav
+        style={{
+          display: "flex",
+          gap: 32,
+          fontSize: 12,
+          letterSpacing: "0.18em",
+          textTransform: "uppercase",
+        }}
+      >
+        <a href="/music" style={{ textDecoration: "none", color: "#000" }}>
+          Music
+        </a>
+        <a href="/live" style={{ textDecoration: "none", color: "#000" }}>
+          Live
+        </a>
+        <a href="/gallery" style={{ textDecoration: "none", color: "#000" }}>
+          Gallery
+        </a>
       </nav>
     </header>
   )
