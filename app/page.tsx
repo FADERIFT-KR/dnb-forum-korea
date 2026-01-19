@@ -1,92 +1,54 @@
-import { getPosts } from "../lib/poster"
-
-const categoryColor: Record<string, string> = {
-  Event: "#ff3b3b",
-  Artist: "#3b82ff",
-  Producer: "#a855f7"
-}
-
-export default async function Home() {
-  const posts = await getPosts()
-
+export default function Home() {
   return (
-    <main style={{ maxWidth: 920, margin: "0 auto", padding: "64px 24px" }}>
-      {/* HERO HEADER */}
-      <header style={{ marginBottom: 64 }}>
-        <h1
-          style={{
-            fontSize: 48,
-            letterSpacing: "0.18em",
-            fontWeight: 800,
-            margin: 0
-          }}
-        >
-          DNB FORUM KOREA
-        </h1>
-        <p
-          style={{
-            marginTop: 16,
-            color: "#9ca3af",
-            letterSpacing: "0.12em",
-            textTransform: "uppercase",
-            fontSize: 14
-          }}
-        >
-          Events · Artists · Producers
-        </p>
-      </header>
-
-      {/* POSTS */}
-      <section style={{ display: "grid", gap: 32 }}>
-        {posts.map((p, i) => (
-          <article
-            key={i}
-            style={{
-              background: "#111",
-              borderRadius: 12,
-              padding: 24,
-              border: "1px solid #1f1f1f"
-            }}
-          >
-            {/* CATEGORY TAG */}
-            <span
-              style={{
-                display: "inline-block",
-                marginBottom: 12,
-                fontSize: 12,
-                letterSpacing: "0.14em",
-                textTransform: "uppercase",
-                color: categoryColor[p.category] || "#aaa"
-              }}
-            >
-              {p.category}
-            </span>
-
-            <h2 style={{ margin: "0 0 12px 0", fontSize: 22 }}>
-              {p.title}
-            </h2>
-
-            <p style={{ margin: 0, color: "#cfcfcf", lineHeight: 1.6 }}>
-              {p.summary}
-            </p>
-          </article>
-        ))}
-      </section>
-
-      {/* FOOTER */}
-      <footer
+    <main style={{ padding: "80px 60px" }}>
+      <section
         style={{
-          marginTop: 96,
-          paddingTop: 32,
-          borderTop: "1px solid #1f1f1f",
-          color: "#777",
-          fontSize: 12,
-          letterSpacing: "0.1em",
-          textTransform: "uppercase"
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+          gap: 32
         }}
       >
-        Curated by producers · Based in Korea
-      </footer>
+        {[
+          "/images/1.jpg",
+          "/images/2.jpg",
+          "/images/3.jpg",
+          "/images/4.jpg",
+          "/images/5.jpg",
+          "/images/6.jpg"
+        ].map((src, i) => (
+          <div key={i}>
+            <div
+              style={{
+                width: "100%",
+                aspectRatio: "1 / 1",
+                background: "#e5e5e5",
+                overflow: "hidden"
+              }}
+            >
+              <img
+                src={src}
+                alt="album artwork"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover"
+                }}
+              />
+            </div>
+
+            <p
+              style={{
+                marginTop: 12,
+                fontSize: 12,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase"
+              }}
+            >
+              Coming Soon
+            </p>
+          </div>
+        ))}
+      </section>
     </main>
   )
 }
