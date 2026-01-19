@@ -22,44 +22,34 @@ export default function RootLayout({
         }}
       >
         <header
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: "32px 48px",
-            borderBottom: "1px solid #e5e5e5"
-          }}
-        >
-          {/* LOGO */}
-          <Link href="/">
-            <Image
-              src="/logo.png"
-              alt="FADERIFT"
-              width={180}
-              height={40}
-              priority
-            />
-          </Link>
+  style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: "24px 48px",
+  }}
+>
+  {/* LOGO */}
+  <img
+    src="/logo.png"
+    alt="FADERIFT"
+    style={{ height: 28 }}
+  />
 
-          {/* NAV */}
-          <nav style={{ display: "flex", gap: 32 }}>
-            {["music", "live", "gallery"].map((item) => (
-              <Link
-                key={item}
-                href={`/${item === "music" ? "" : item}`}
-                style={{
-                  textDecoration: "none",
-                  color: "#000",
-                  fontSize: 13,
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase"
-                }}
-              >
-                {item}
-              </Link>
-            ))}
-          </nav>
-        </header>
+  {/* NAV */}
+  <nav
+    style={{
+      display: "flex",
+      gap: 24,
+      fontSize: 12,
+      letterSpacing: "0.18em",
+    }}
+  >
+    <a href="/music">MUSIC</a>
+    <a href="/live">LIVE</a>
+    <a href="/gallery">GALLERY</a>
+  </nav>
+</header>
 
         {children}
       </body>
