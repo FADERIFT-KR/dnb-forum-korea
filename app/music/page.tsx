@@ -1,12 +1,5 @@
 export default function MusicPage() {
-  const releases = [
-    { title: "Silence (Remix)" },
-    { title: "Guardian Angel" },
-    { title: "Hardest Style" },
-    { title: "Angel w/ Sub Focus" },
-    { title: "Satellite" },
-    { title: "Lost This Feeling (Remix)" },
-  ]
+  const releases = Array(6).fill("Coming Soon")
 
   return (
     <main style={{ padding: 48 }}>
@@ -17,7 +10,7 @@ export default function MusicPage() {
           gap: 32,
         }}
       >
-        {releases.map((item, i) => (
+        {releases.map((title, i) => (
           <article
             key={i}
             style={{ cursor: "pointer" }}
@@ -40,7 +33,7 @@ export default function MusicPage() {
                 textTransform: "uppercase",
               }}
             >
-              {item.title}
+              {title}
             </div>
           </article>
         ))}
