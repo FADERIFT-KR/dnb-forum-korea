@@ -1,6 +1,8 @@
+import Header from "./components/Header"
+
 export const metadata = {
   title: "DNB FORUM KOREA",
-  description: "Korean Drum & Bass scene · Events · Artists · Producers"
+  description: "Drum & Bass producer & curator based in Korea",
 }
 
 export default function RootLayout({
@@ -9,15 +11,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ko">
+    <html lang="en">
       <body
         style={{
           margin: 0,
-          fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont",
-          background: "#0a0a0a",
-          color: "#eaeaea"
+          fontFamily: "Inter, system-ui, -apple-system",
+          background: "#fff",
+          color: "#000",
         }}
       >
+        <Header />
         {children}
       </body>
     </html>
