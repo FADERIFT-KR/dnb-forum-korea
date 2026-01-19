@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "dnb forum korea",
-  description: "Drum & Bass news, events, and producer-focused insights in Korean"
+  title: "DNB FORUM KOREA",
+  description: "Korean Drum & Bass scene · Events · Artists · Producers"
 }
 
 export default function RootLayout({
@@ -10,7 +10,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body style={{ margin: 0, fontFamily: "system-ui", background: "#0b0b0b", color: "#fff" }}>
+      <body
+        style={{
+          margin: 0,
+          fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont",
+          background: "#0a0a0a",
+          color: "#eaeaea"
+        }}
+      >
         {children}
       </body>
     </html>
