@@ -22,7 +22,7 @@ export default function Header() {
         style={{
           display: "flex",
           gap: 32,
-          fontSize: 12,
+          fontSize: 20,
           letterSpacing: "0.18em",
           textTransform: "uppercase",
         }}
